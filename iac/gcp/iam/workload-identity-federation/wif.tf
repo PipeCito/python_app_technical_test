@@ -25,7 +25,7 @@ resource "google_iam_workload_identity_pool_provider" "github-oidc-test" {
     issuer_uri = "https://token.actions.githubusercontent.com"
   }
 
-  attribute_condition = "assertion.repository_owner == \"cloudboostingservice\""
+  attribute_condition = "assertion.repository == \"PipeCito/python_app_technical_test\""
 }
 
 resource "google_service_account_iam_binding" "gcp-service-accounts-workload-identity-github" {
@@ -33,6 +33,6 @@ resource "google_service_account_iam_binding" "gcp-service-accounts-workload-ide
   service_account_id = data.google_service_account.github.id
   role               = "roles/iam.workloadIdentityUser"
   members = [
-    "principalSet://iam.googleapis.com/projects/650911635508/locations/global/workloadIdentityPools/github-oidc-test/attribute.repository_owner/cloudboostingservice",
+    "principalSet://iam.googleapis.com/projects/650911635508/locations/global/workloadIdentityPools/github-oidc-test/attribute.repository/PipeCito/python_app_technical_test",
   ]
 }
