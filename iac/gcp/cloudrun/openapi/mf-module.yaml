@@ -1,0 +1,31 @@
+swagger: "2.0"
+info:
+  title: Nmap Scan API
+  version: "0.1.0"
+paths:
+  /feedbacks:
+    get:
+      summary: Retrieve all feedback entries
+      description: This endpoint returns a list of feedbacks
+      operationId: feedbacks
+      responses:
+        "200":
+          description: A list of feedback entries.
+          schema:
+            type: object
+            properties:
+              results:
+                type: string
+                description: The list of feedbacks.
+        "500":
+          description: Internal server error.
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: Error message.
+schemes:
+  - https
+x-google-backend:
+  address: "https://python-app-technical-test-650911635508.us-east4.run.app"
