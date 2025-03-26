@@ -5,3 +5,5 @@ This repository contains a Python Flask API designed to be deployed on Google Cl
 ## Overview
 
 The Flask API provides a simple web service. The CI/CD pipeline, powered by GitHub Actions and Workload Identity Federation, automates the deployment process. This ensures that any code changes pushed to the repository are automatically built, packaged into a Docker image, and deployed to Google Cloud Run.
+
+Cloud Run URL: https://python-app-technical-test-650911635508.us-east4.run.app/feedbacks
